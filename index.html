@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	  
+	<title>Custom HTML5 Video Player</title>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/portfolio-item.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+    <div class="container">
+
+     
+      <h1 class="my-4">Video Title
+        <small>Date / Party Involved</small>
+      </h1>
+
+     
+      <div class="row">
+
+        <div id="video-player">
+			
+			<!-- Video -->
+        	<video id="video" width="640" height="365">
+            
+            	<source src= "videos/The Facebook.mp4" type="video/mp4">
+            	<p>
+               		 Your browser doesn't support HTML5 video.
+                	<a href="videos/The Facebook.mp4">Download</a> the video instead.
+            	</p>
+        	</video>
+        	
+			<!-- Video Controls -->
+        	<div id="video-controls">
+           		 <button type="button" id="play-pause"><i class='fa fa-play'></i></button>
+           	 	<input type="range" id="seek-bar" value="0">
+           	 	<button type="button" id="mute"><i class="fa fa-volume-up"></i></button>
+           		 <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+           		 <button type="button" id="full-screen"><i class="fa fa-expand"></i></button>
+           	 	<button type="button" id="exit-screen"><i class="fa fa-compress"></i></button>
+       	    </div>
+		  
+		  </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3">Video Description</h3>
+          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  </p>
+          <h3 class="my-3">Video Details</h3>
+          <ul>
+            <li>xxxxxxxxxxxxx</li>
+            <li>xxxxxxxxxxxxx</li>
+            <li>xxxxxxxxxxxxx</li>
+            <li>xxxxxxxxxxxxx</li>
+          </ul>
+        </div>
+
+      </div>
+  
+
+      
+      <h3 class="my-4">Observations</h3>
+
+      <div class="row">
+
+        <div class="col-md-7 col-sm-6 mb-4">
+          <a href="#">
+            <div class="form-group">
+  				<textarea class="form-control" rows="8" id="comment"></textarea>
+			</div>
+          </a>
+        </div>
+		  
+		  
+		  <div class="col-md-7 col-sm-6 mb-4">
+          <a href="#">
+            <button type="submit" class="btn btn-primary" onclick="document.getElementById('comment').value = ''">Submit Comment</button>
+<!--		    <button onclick="getCurTime()" type="button">Get current time position</button>-->
+			  <p>Video Playback Position: <span id="demo"></span>  sec</p>
+
+				<script>
+						// Get the video element with id="myVideo"
+						var vid = document.getElementById("video");
+
+						// Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
+						vid.ontimeupdate = function() {myFunction()};
+
+						function myFunction() 
+					    {
+    					// Display the current position of the video in a p element with id="demo"
+    					document.getElementById("demo").innerHTML = vid.currentTime;
+						}
+			  	</script>
+          </a>
+			
+        </div>
+		  
+		  
+		  <div class="col-md-7 col-sm-6 mb-4">
+          <a href="#">
+			<h3 class="my-1">Notes</h3>
+           	<div class="form-group">
+  				<textarea readonly class="form-control" rows="8" id="notes"></textarea>
+			</div>
+          </a>
+        </div>
+
+      </div>
+  
+    </div>
+  
+
+
+    <footer class="py-5 bg-dark"></footer>
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="jquery.min.js"></script>
+    <script src="screenfull/screenfull.min.js"></script>
+    <script src="script.js"></script>
+	  
+  </body>
+
+</html>
